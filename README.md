@@ -1,5 +1,106 @@
 # img-postcardcreator
 
+![Header](docs/header.png)
+
+Ein Projekt von:
+
+- [@JuKa2023](https://github.com/JuKa2023)
+- [@SophiaIseli](https://github.com/SophiaIseli)
+
+## Features
+
+## Verwendete Technologien und API
+- Backend: PHP für Datenverarbeitung und API-Entwicklung
+
+- Datenbank: MariaDB für effiziente Datenspeicherung und -verwaltung
+
+- Frontend:
+  - HTML für die Struktur der Webseite
+  - Tailwind CSS für responsives und modernes Design
+  - JavaScript für interaktive Elemente und Datenvisualisierung
+
+- Diagramme: Chart.js für die Erstellung interaktiver und anpassbarer Grafiken
+
+- APIs:
+  - Open-Meteo API für Wetterdaten
+  - OpenTransport API für Zugverspätungsinformationen
+
+## Datenbankstruktur
+
+Das Projekt verwendet ein relationales Datenbankschema mit zwei Haupttabellen:
+
+![ERD](docs/erd.png)
+
+1. Wettertabelle (weather_data):
+   - location: VARCHAR, Standort der Wetterdaten (z.B. 'Bern')
+   - timestamp: TIMESTAMP, Zeitpunkt der Datenerfassung
+   - temperature_celsius: FLOAT, Temperatur in Grad Celsius
+   - wind_speed: FLOAT, Windgeschwindigkeit in m/s
+   - rain: FLOAT, Regenmenge in mm
+   - weather_code: INT, numerischer Code für Wetterbedingungen
+   - showers: FLOAT, Schauermenge in mm
+   - snowfall: FLOAT, Schneefallmenge in cm
+   - wind_gusts_10m: FLOAT, Windböen in m/s
+
+2. Zugtabelle (stationtable):
+   - id: INT AUTO_INCREMENT, Primärschlüssel
+   - destination: VARCHAR, Zielort des Zuges
+   - departure: VARCHAR, Abfahrtsbahnhof (immer 'Bern')
+   - departure_time_stamp: INT, Unix-Timestamp der geplanten Abfahrt
+   - departure_time: DATETIME, formatierte Abfahrtszeit
+   - delay: INT, Verspätung in Minuten
+   - platform: VARCHAR, Bahnsteig-Nummer
+
+Die weather_data-Tabelle speichert Zeitreihen von Wetterdaten, während die stationtable Zugverbindungen und deren Status erfasst.
+
+Dieses Schema ermöglicht effiziente Abfragen für verschiedene Zeiträume (stündlich, täglich, monatlich) durch einfache Aggregationen über die Zeitstempel-Spalten. Die Struktur unterstützt auch die Berechnung komplexer Metriken wie eines "Störungsindex", der verschiedene Wetterfaktoren kombiniert.
+
+Die regelmässige Aktualisierung beider Tabellen (alle 5 Minuten für Wetterdaten, alle 10 Minuten für Zugdaten) gewährleistet eine aktuelle Datenbasis für Echtzeit-Analysen und kurzfristige Vorhersagen.
+
+## Setup
+
+Für die Einrichtung des Projekts empfehlen wir die Verwendung von Docker, da dies die Installation und Konfiguration aller benötigten Komponenten vereinfacht:
+
+
+### Umgebungsvariablen
+
+Die Anwendung verwendet folgende Umgebungsvariablen:
+
+- `DB_HOST`: Datenbank-Host (Standard: mysql)
+- `DB_NAME`: Datenbankname (Standard: im3)
+- `DB_USER`: Datenbankbenutzer (Standard: root)
+- `DB_PASSWORD`: Datenbankpasswort
+- `DB_ROOT_PASSWORD`: Root-Passwort
+- `APP_ENV`: Anwendungsumgebung (Entwicklung/Produktion)
+- `APP_DEBUG`: Debug-Modus (true/false)
+
+## Reflektion
+
+Nachfolgend einige reflektierende Gedanken und Erkenntnisse, die sich aus den Erfahrungen des Projekts ergeben haben:
+
+### Learnings
+
+- APIs integrieren und verknüpfen: Wir haben gelernt, wie man APIs untersucht und welche Tücken sie mitbringen können, wie man verschiedene APIs (Wetter- und Zugverspätungsdaten) nahtlos in eine Webanwendung integriert und die Daten sinnvoll kombiniert, wann es Sinn macht Daten vorab in eine Datenbank zu speichern.
+- Datenanalyse und Visualisierung: Einblicke in die Korrelation von Wetterbedingungen und Verspätungen auf den Strecken wurden durch statistische Auswertungen und die Visualisierung der Ergebnisse gewonnen.
+- Benutzerzentrierte Gestaltung: Wir haben den Fokus darauf gelegt, die Anwendung für den Benutzer einfach und interaktiv zu gestalten.
+
+### Schwierigkeiten
+
+4. **Frontend-Entwicklung und Responsivität:**
+   - Gestaltung einer responsiven Benutzeroberfläche mit Tailwind CSS
+   - Anpassung des Layouts für verschiedene Bildschirmgrössen
+
+### Benutzte Ressourcen
+
+Während der Entwicklung stiessen wir auf technische Herausforderungen. In solchen Fällen griffen wir auf die Notizen aus dem Unterricht zurück. Wenn uns das Kursmaterial nicht weiterhalf, griffen wir auf [ChatGPT](https://chat.openai.com/) und [W3Schools](https://www.w3schools.com/php/default.asp) zurück, um Lösungen für Codeprobleme zu finden und uns bei Unklarheiten in der Programmierung zu unterstützen. Diese Vorgehensweise trug wesentlich zur Effizienz und Qualität des Entwicklungsprozesses bei. Natürlich gab es auch immer wieder Punkte, wo wir lieber auf menschliche Hilfe zurückgreifen wollten. In diesen Fällen erhielten wir Unterstützung durch unsere Dozenten oder Freunde, die in der Programmierwelt eingebettet sind.
+
+Für Design-Inspirationen haben wir häufig die Seite CodePen [CodePen](https://codepen.io/) genutzt. Diese Plattform erfordert jedoch eine gewisse Menge an Fachjargon und Vorwissen, um die gewünschten Ergebnisse zu finden. Es ist wichtig, klar anzugeben, mit welchen Technologien man arbeitet und ob man bestimmte Frameworks verwendet oder nicht, um relevante und nützliche Beispiele zu finden. Für Pragen bezüglich des Designs mit Tailwind, griffen wir auf die offizielle Entwicklerseite zurück [TailwindCSS](https://tailwindcss.com/).
+
+### Erweiterungsmöglichkeiten
+
+### Bugs
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
