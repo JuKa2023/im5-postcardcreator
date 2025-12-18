@@ -7,7 +7,35 @@ Ein Projekt von:
 - [@JuKa2023](https://github.com/JuKa2023)
 - [@SophiaIseli](https://github.com/SophiaIseli)
 
+## Kurzbeschrieb
+
+adte ist eine digitale Postkarten-Webanwendung, mit der Nutzer:innen persönliche Postkarten gestalten und digital versenden können. Der Fokus liegt auf individuellem Ausdruck, bewusster Gestaltung und einer reduzierten, ästhetischen Benutzeroberfläche.
+
 ## Features
+- Registrierung & Login:
+  - Anmeldung und Registrierung über Google-Login
+
+- Inspiration & Einstieg:
+  - Frontpage mit Inspirationsinhalten und Beispiel-Postkarten
+  - Übersicht über mögliche Gestaltungsstile und Moodrichtungen
+
+- Postkarten erstellen:
+  - Upload eigener Bilder und freie Platzierung auf der Postkarte
+  - Auswahl von Moodbildern als Hintergrund
+  - Textfelder hinzufügen und frei positionieren
+  - Auswahl von Schriftarten und Schriftfarben
+  - Einfügen von Emojis
+  - Aufnahme und Integration einer eigenen Sprachnachricht
+
+- Postkarten versenden & empfangen:
+  - Versand digitaler Postkarten
+  - Empfang und Ansicht erhaltener Postkarten
+  - Generierung eines individuellen Links zur Postkarte
+  - Zeitversetztes Versenden mit Datum- und Uhrzeitauswahl
+  
+- Übersicht & Verwaltung:
+  - Ansicht aller selbst erstellten und verschickten Postkarten
+
 
 ## Verwendete Technologien und API
 
@@ -92,30 +120,6 @@ Für Design-Inspirationen haben wir häufig die Seite CodePen [CodePen](https://
 ### Erweiterungsmöglichkeiten
 
 ### Bugs
-
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 
