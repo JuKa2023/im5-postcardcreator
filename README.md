@@ -122,9 +122,17 @@ Nachfolgend einige reflektierende Gedanken und Erkenntnisse, die sich aus den Er
 
 ### Benutzte Ressourcen
 
-Während der Entwicklung stiessen wir auf technische Herausforderungen. In solchen Fällen griffen wir auf die Notizen aus dem Unterricht zurück. Wenn uns das Kursmaterial nicht weiterhalf, griffen wir auf [ChatGPT](https://chat.openai.com/) und [W3Schools](https://www.w3schools.com/php/default.asp) zurück, um Lösungen für Codeprobleme zu finden und uns bei Unklarheiten in der Programmierung zu unterstützen. Diese Vorgehensweise trug wesentlich zur Effizienz und Qualität des Entwicklungsprozesses bei. Natürlich gab es auch immer wieder Punkte, wo wir lieber auf menschliche Hilfe zurückgreifen wollten. In diesen Fällen erhielten wir Unterstützung durch unsere Dozenten oder Freunde, die in der Programmierwelt eingebettet sind.
+Während der Entwicklung des Projekts traten verschiedene technische Herausforderungen auf. In einem ersten Schritt griffen wir auf unsere Unterrichtsnotizen sowie das bereitgestellte Kursmaterial zurück. Diese bildeten die Grundlage für viele architektonische und konzeptionelle Entscheidungen.
 
-Für Design-Inspirationen haben wir häufig die Seite CodePen [CodePen](https://codepen.io/) genutzt. Diese Plattform erfordert jedoch eine gewisse Menge an Fachjargon und Vorwissen, um die gewünschten Ergebnisse zu finden. Es ist wichtig, klar anzugeben, mit welchen Technologien man arbeitet und ob man bestimmte Frameworks verwendet oder nicht, um relevante und nützliche Beispiele zu finden. Für Pragen bezüglich des Designs mit Tailwind, griffen wir auf die offizielle Entwicklerseite zurück [TailwindCSS](https://tailwindcss.com/).
+Wenn das Kursmaterial keine ausreichende Lösung bot, nutzten wir zusätzliche Online-Ressourcen. Für backend- und datenbankbezogene Funktionen verwendeten wir hauptsächlich die offizielle Dokumentation von [PocketBase](https://pocketbase.io/docs/). Für die Umsetzung des Frontends mit Vue.js orientierten wir uns an der offiziellen [Vue.js-Dokumentation](https://vuejs.org/).
+
+Zur Unterstützung bei konkreten Codeproblemen und zur Klärung von Verständnisfragen setzten wir KI-gestützte Tools wie [ChatGPT](https://chat.openai.com/) und [Claude](https://claude.ai/new) ein. Diese dienten insbesondere als Hilfe bei der Fehlersuche, beim Refactoring sowie beim Verständnis komplexerer Logik, ohne den eigentlichen Entwicklungsprozess vollständig zu automatisieren.
+
+Für allgemeine Programmierkonzepte und Syntaxfragen griffen wir ergänzend auf Plattformen wie [W3Schools](https://www.w3schools.com/) zurück.
+
+Im Bereich Design und Styling nutzten wir primär die offizielle Dokumentation von [Tailwind CSS](https://tailwindcss.com/), um Utility-Klassen korrekt einzusetzen und ein konsistentes Layout umzusetzen. Als visuelle Inspiration für das Design und die Benutzeroberfläche diente unter anderem die Plattform [Pinterest](https://www.pinterest.com/).
+
+Bei komplexeren Fragestellungen oder konzeptionellen Unsicherheiten zogen wir bewusst menschliche Unterstützung hinzu. In diesen Fällen erhielten wir wertvolle Hilfe durch unsere Dozenten sowie durch Freunde mit Erfahrung in der Softwareentwicklung.
 
 ### Erweiterungsmöglichkeiten
 
