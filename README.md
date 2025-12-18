@@ -10,20 +10,22 @@ Ein Projekt von:
 ## Features
 
 ## Verwendete Technologien und API
-- Backend: PHP für Datenverarbeitung und API-Entwicklung
 
-- Datenbank: MariaDB für effiziente Datenspeicherung und -verwaltung
+- **Backend & Datenbank**: [PocketBase](https://pocketbase.io/) (Open Source Backend als Service)
+  - Verwaltet Authentifizierung (OAuth2 mit Google), Datenbank (SQLite) und Dateispeicherung.
 
-- Frontend:
-  - HTML für die Struktur der Webseite
-  - Tailwind CSS für responsives und modernes Design
-  - JavaScript für interaktive Elemente und Datenvisualisierung
+- **Frontend**:
+  - **[Vue.js 3](https://vuejs.org/)**: Das progressive JavaScript Framework (verwendet Composition API & `<script setup>`).
+  - **[TypeScript](https://www.typescriptlang.org/)**: Für statische Typisierung und bessere Entwickler-Experience.
+  - **[Vite](https://vitejs.dev/)**: Next Generation Frontend Tooling.
+  - **[Tailwind CSS](https://tailwindcss.com/)**: Ein Utility-First CSS Framework.
 
-- Diagramme: Chart.js für die Erstellung interaktiver und anpassbarer Grafiken
+- **Listen & Tools**:
+  - `vue-router`: Offizieller Router für Vue.js.
+  - `pocketbase`: JavaScript SDK für die Backend-Integration.
+  - `date-fns`: Moderne Datums-Utility-Bibliothek.
+  - `vue-sonner`: Toast-Benachrichtigungen.
 
-- APIs:
-  - Open-Meteo API für Wetterdaten
-  - OpenTransport API für Zugverspätungsinformationen
 
 ## Datenbankstruktur
 
