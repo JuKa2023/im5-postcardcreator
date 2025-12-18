@@ -27,35 +27,26 @@ Ein Projekt von:
 
 ## Datenbankstruktur
 
-Das Projekt verwendet ein relationales Datenbankschema mit zwei Haupttabellen:
+Das Projekt verwendet ein PocketBase Backend mit einer Haupt-Collection:
 
-![ERD](docs/erd.png)
+### Postcards Collection (postcards)
 
-1. Wettertabelle (weather_data):
-   - location: VARCHAR, Standort der Wetterdaten (z.B. 'Bern')
-   - timestamp: TIMESTAMP, Zeitpunkt der Datenerfassung
-   - temperature_celsius: FLOAT, Temperatur in Grad Celsius
-   - wind_speed: FLOAT, Windgeschwindigkeit in m/s
-   - rain: FLOAT, Regenmenge in mm
-   - weather_code: INT, numerischer Code für Wetterbedingungen
-   - showers: FLOAT, Schauermenge in mm
-   - snowfall: FLOAT, Schneefallmenge in cm
-   - wind_gusts_10m: FLOAT, Windböen in m/s
+Die `postcards` Collection speichert alle erstellten Postkarten.
 
-2. Zugtabelle (stationtable):
-   - id: INT AUTO_INCREMENT, Primärschlüssel
-   - destination: VARCHAR, Zielort des Zuges
-   - departure: VARCHAR, Abfahrtsbahnhof (immer 'Bern')
-   - departure_time_stamp: INT, Unix-Timestamp der geplanten Abfahrt
-   - departure_time: DATETIME, formatierte Abfahrtszeit
-   - delay: INT, Verspätung in Minuten
-   - platform: VARCHAR, Bahnsteig-Nummer
+- `front_image` (file): Das Bild der Postkarte.
+- `audio` (file, optional): Optionale Sprachnachricht zur Postkarte.
+- `message` (text): Die Textnachricht auf der Rückseite.
+- `elements` (json): JSON-Array mit den positionierten Elementen (Sticker, Text, etc.).
+- `is_public` (bool): Gibt an, ob die Karte in der öffentlichen Galerie sichtbar ist.
+- `share_token` (text): Ein eindeutiger Token für den Teilen-Link.
+- `sent` (bool): Status, ob die Karte bereits versendet wurde.
+- `scheduled_time` (date): Geplanter Versandzeitpunkt (optional).
+- `recipient_email` (text): E-Mail-Adresse des Empfängers (optional).
+- `user` (relation): Referenz auf den User, der die Karte erstellt hat.
 
-Die weather_data-Tabelle speichert Zeitreihen von Wetterdaten, während die stationtable Zugverbindungen und deren Status erfasst.
 
-Dieses Schema ermöglicht effiziente Abfragen für verschiedene Zeiträume (stündlich, täglich, monatlich) durch einfache Aggregationen über die Zeitstempel-Spalten. Die Struktur unterstützt auch die Berechnung komplexer Metriken wie eines "Störungsindex", der verschiedene Wetterfaktoren kombiniert.
 
-Die regelmässige Aktualisierung beider Tabellen (alle 5 Minuten für Wetterdaten, alle 10 Minuten für Zugdaten) gewährleistet eine aktuelle Datenbasis für Echtzeit-Analysen und kurzfristige Vorhersagen.
+
 
 ## Setup
 
