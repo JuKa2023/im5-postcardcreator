@@ -107,7 +107,32 @@ Die Anwendung verwendet folgende Umgebungsvariablen:
 ## Reflektion
 
 Nachfolgend einige reflektierende Gedanken und Erkenntnisse, die sich aus den Erfahrungen des Projekts ergeben haben:
+ie Arbeit am Projekt **adte** war insgesamt eine sehr positive und lehrreiche Erfahrung. Besonders der konzeptionelle und gestalterische Teil des Projekts hat mir erneut viel Freude bereitet. Die Idee, digitale Postkarten bewusst persönlicher zu gestalten und Nutzer:innen einen kreativen Raum für individuelle Grüsse zu geben, war von Anfang an sehr motivierend.
 
+Zu Beginn lag der Fokus stark auf der Konzeption und dem Design. Die Ausarbeitung des Screenflows, des Decision Trees sowie des visuellen Auftritts in Figma halfen dabei, das Projekt klar zu strukturieren und eine gemeinsame Vorstellung vom Endprodukt zu entwickeln. Die Gestaltung des Mockups in Light- und Dark-Mode war dabei besonders spannend, da viel Wert auf eine reduzierte, ästhetische und moderne Benutzeroberfläche gelegt wurde.
+
+Während der Umsetzung zeigte sich jedoch, dass gewisse Designentscheidungen aus Figma in der Praxis angepasst werden mussten. Vor allem im Hinblick auf das responsive Design kam es zu Abweichungen: Im Hochformat auf dem Smartphone wirkten die Postkarten sehr klein und das ursprünglich geplante Layout funktionierte visuell nicht überzeugend. Aus diesem Grund wurde das Layout während der Entwicklungsphase angepasst. Rückblickend wäre es hilfreich gewesen, bereits in der Designphase mehr Zeit für User Testing einzuplanen, um solche Probleme früher zu erkennen.
+
+Technisch gesehen verlief das Projekt grösstenteils reibungslos. Insgesamt traten nur wenige grössere Schwierigkeiten auf. Die grösste Herausforderung bestand darin, die individuell gestalteten Postkarten korrekt zu speichern und strukturiert in der Datenbank abzulegen. Besonders die Kombination aus Layout, Bildern, Texten und weiteren Elementen erforderte ein durchdachtes Datenmodell und mehrere Anpassungen während der Umsetzung.
+
+Die Zusammenarbeit im Team funktionierte sehr gut. Aufgaben konnten klar aufgeteilt werden und unterschiedliche Stärken ergänzten sich sinnvoll. Der regelmässige Austausch half dabei, Probleme früh zu erkennen und gemeinsam Lösungen zu finden.
+
+Insgesamt hat das Projekt gezeigt, wie wichtig die enge Verbindung zwischen Design und technischer Umsetzung ist. Kleine Anpassungen und Iterationen gehören zum Entwicklungsprozess dazu und tragen letztlich zu einem besseren Endresultat bei.
+
+## Learnings
+
+- Designentscheidungen aus Figma müssen in der Umsetzung kritisch überprüft werden, insbesondere im Hinblick auf Responsiveness  
+- User Testing in einer frühen Phase kann helfen, spätere Layout-Anpassungen zu vermeiden  
+- Die Speicherung komplexer, individuell gestalteter Inhalte in einer Datenbank erfordert eine saubere Datenstruktur  
+- Ein klar definierter Screenflow erleichtert die Umsetzung erheblich  
+- Eine gute Teamkommunikation reduziert technische und konzeptionelle Probleme  
+
+## Schwierigkeiten
+
+- Abweichungen zwischen Figma-Design und der tatsächlichen Darstellung auf mobilen Geräten  
+- Anpassung des Layouts aufgrund zu kleiner Postkarten im Hochformat  
+- Technische Umsetzung der Speicherung von Postkarten-Designs in der Datenbank  
+- Fehlende Zeit für ausführliches User Testing in der Designphase  
 ### Learnings
 
 - APIs integrieren und verknüpfen: Wir haben gelernt, wie man APIs untersucht und welche Tücken sie mitbringen können, wie man verschiedene APIs (Wetter- und Zugverspätungsdaten) nahtlos in eine Webanwendung integriert und die Daten sinnvoll kombiniert, wann es Sinn macht Daten vorab in eine Datenbank zu speichern.
