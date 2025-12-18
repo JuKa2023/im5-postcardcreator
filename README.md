@@ -87,11 +87,6 @@ Die `users` Collection verwaltet die Benutzerkonten der Anwendung.
 - `created` (date): Zeitstempel der Erstellung (Automatisch).
 - `updated` (date): Zeitstempel der letzten Änderung (Automatisch).
 
-
-
-
-
-
 ## Setup
 
 Für die Einrichtung des Projekts empfehlen wir die Verwendung von Docker, da dies die Installation und Konfiguration aller benötigten Komponenten vereinfacht:
@@ -132,6 +127,38 @@ Während der Entwicklung stiessen wir auf technische Herausforderungen. In solch
 Für Design-Inspirationen haben wir häufig die Seite CodePen [CodePen](https://codepen.io/) genutzt. Diese Plattform erfordert jedoch eine gewisse Menge an Fachjargon und Vorwissen, um die gewünschten Ergebnisse zu finden. Es ist wichtig, klar anzugeben, mit welchen Technologien man arbeitet und ob man bestimmte Frameworks verwendet oder nicht, um relevante und nützliche Beispiele zu finden. Für Pragen bezüglich des Designs mit Tailwind, griffen wir auf die offizielle Entwicklerseite zurück [TailwindCSS](https://tailwindcss.com/).
 
 ### Erweiterungsmöglichkeiten
+
+- **Postkarten-Konversationen**
+  - Beantworten empfangener Postkarten entweder mit:
+    - einer Textnachricht oder
+    - einer neuen Postkarte
+  - Darstellung der Antworten in einer Chat-ähnlichen Ansicht (ähnlich zu WhatsApp)
+  - Übersicht über alle ausgetauschten Postkarten und Reaktionen zwischen zwei Nutzer:innen
+
+- **Erweiterte Medienunterstützung**
+  - Unterstützung von Video-Postkarten
+  - Integration von animierten Elementen (z. B. GIFs)
+
+- **Persönliche Galerien**
+  - Eigene Galerie empfangene Postkarten
+  - Option, eine Galerie oder Postkarte zu veröffentlichen
+  - Erneutes Versenden oder Herunterladen empfangener Postkarten
+
+- **Community- & Sharing-Funktionen**
+  - Veröffentlichen von Postkarten-Designs und Templates
+  - Andere Nutzer:innen können Designs anpassen oder weiterentwickeln
+  - Anzeige der ursprünglichen Urheber:innen bei wiederverwendeten Designs
+  - Liken, Speichern oder Markieren von Favoriten
+
+- **Interaktionen & Reaktionen**
+  - Emoji-Reaktionen auf Postkarten
+  - Kommentarfunktion (privat oder öffentlich)
+  - Zustell- und Lesebestätigungen
+
+- **Performance & Skalierbarkeit**
+  - Bild- und Videokomprimierung für schnellere Uploads
+  - Caching häufig genutzter Designs
+  - Optimierung der Cloud-Speicherung
 
 ### Bugs
 
