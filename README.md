@@ -74,6 +74,20 @@ Die `postcards` Collection speichert alle erstellten Postkarten.
 - `recipient_email` (text): E-Mail-Adresse des Empfängers (optional).
 - `user` (relation): Referenz auf den User, der die Karte erstellt hat.
 
+### Users Collection (users)
+
+Die `users` Collection verwaltet die Benutzerkonten der Anwendung.
+
+- `id` (text): Eindeutige ID des Benutzers.
+- `email` (email): Die E-Mail-Adresse des Benutzers.
+- `emailVisibility` (bool): Gibt an, ob die E-Mail-Adresse für andere sichtbar ist (Standard: False).
+- `verified` (bool): Status der E-Mail-Verifizierung.
+- `name` (text): Der Anzeigename des Benutzers.
+- `avatar` (file): Das Profilbild des Benutzers.
+- `created` (date): Zeitstempel der Erstellung (Automatisch).
+- `updated` (date): Zeitstempel der letzten Änderung (Automatisch).
+
+
 
 
 
