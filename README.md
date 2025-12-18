@@ -133,17 +133,6 @@ Insgesamt hat das Projekt gezeigt, wie wichtig die enge Verbindung zwischen Desi
 - Anpassung des Layouts aufgrund zu kleiner Postkarten im Hochformat  
 - Technische Umsetzung der Speicherung von Postkarten-Designs in der Datenbank  
 - Fehlende Zeit für ausführliches User Testing in der Designphase  
-### Learnings
-
-- APIs integrieren und verknüpfen: Wir haben gelernt, wie man APIs untersucht und welche Tücken sie mitbringen können, wie man verschiedene APIs (Wetter- und Zugverspätungsdaten) nahtlos in eine Webanwendung integriert und die Daten sinnvoll kombiniert, wann es Sinn macht Daten vorab in eine Datenbank zu speichern.
-- Datenanalyse und Visualisierung: Einblicke in die Korrelation von Wetterbedingungen und Verspätungen auf den Strecken wurden durch statistische Auswertungen und die Visualisierung der Ergebnisse gewonnen.
-- Benutzerzentrierte Gestaltung: Wir haben den Fokus darauf gelegt, die Anwendung für den Benutzer einfach und interaktiv zu gestalten.
-
-### Schwierigkeiten
-
-4. **Frontend-Entwicklung und Responsivität:**
-   - Gestaltung einer responsiven Benutzeroberfläche mit Tailwind CSS
-   - Anpassung des Layouts für verschiedene Bildschirmgrössen
 
 ### Benutzte Ressourcen
 
