@@ -7,7 +7,35 @@ Ein Projekt von:
 - [@JuKa2023](https://github.com/JuKa2023)
 - [@SophiaIseli](https://github.com/SophiaIseli)
 
+## Kurzbeschrieb
+
+adte ist eine digitale Postkarten-Webanwendung, mit der Nutzer:innen persönliche Postkarten gestalten und digital versenden können. Der Fokus liegt auf individuellem Ausdruck, bewusster Gestaltung und einer reduzierten, ästhetischen Benutzeroberfläche.
+
 ## Features
+- Registrierung & Login:
+  - Anmeldung und Registrierung über Google-Login
+
+- Inspiration & Einstieg:
+  - Frontpage mit Inspirationsinhalten und Beispiel-Postkarten
+  - Übersicht über mögliche Gestaltungsstile und Moodrichtungen
+
+- Postkarten erstellen:
+  - Upload eigener Bilder und freie Platzierung auf der Postkarte
+  - Auswahl von Moodbildern als Hintergrund
+  - Textfelder hinzufügen und frei positionieren
+  - Auswahl von Schriftarten und Schriftfarben
+  - Einfügen von Emojis
+  - Aufnahme und Integration einer eigenen Sprachnachricht
+
+- Postkarten versenden & empfangen:
+  - Versand digitaler Postkarten
+  - Empfang und Ansicht erhaltener Postkarten
+  - Generierung eines individuellen Links zur Postkarte
+  - Zeitversetztes Versenden mit Datum- und Uhrzeitauswahl
+  
+- Übersicht & Verwaltung:
+  - Ansicht aller selbst erstellten und verschickten Postkarten
+
 
 ## Verwendete Technologien und API
 - Backend: PHP für Datenverarbeitung und API-Entwicklung
