@@ -87,11 +87,6 @@ Die `users` Collection verwaltet die Benutzerkonten der Anwendung.
 - `created` (date): Zeitstempel der Erstellung (Automatisch).
 - `updated` (date): Zeitstempel der letzten Änderung (Automatisch).
 
-
-
-
-
-
 ## Setup
 
 Für die Einrichtung des Projekts empfehlen wir die Verwendung von Docker, da dies die Installation und Konfiguration aller benötigten Komponenten vereinfacht:
@@ -111,29 +106,80 @@ Die Anwendung verwendet folgende Umgebungsvariablen:
 
 ## Reflektion
 
-Nachfolgend einige reflektierende Gedanken und Erkenntnisse, die sich aus den Erfahrungen des Projekts ergeben haben:
+Die Arbeit am Projekt **adte** war insgesamt eine sehr positive und lehrreiche Erfahrung. Besonders der konzeptionelle und gestalterische Teil des Projekts hat uns erneut viel Freude bereitet. Die Idee, digitale Postkarten bewusst persönlicher zu gestalten und Nutzer:innen einen kreativen Raum für individuelle Grüsse zu geben, war von Anfang an sehr motivierend.
 
-### Learnings
+Zu Beginn lag der Fokus stark auf der Konzeption und dem Design. Die Ausarbeitung des Screenflows, des Decision Trees sowie des visuellen Auftritts in Figma halfen dabei, das Projekt klar zu strukturieren und eine gemeinsame Vorstellung vom Endprodukt zu entwickeln. Die Gestaltung des Mockups in Light- und Dark-Mode war dabei besonders spannend, da viel Wert auf eine reduzierte, ästhetische und moderne Benutzeroberfläche gelegt wurde.
 
-- APIs integrieren und verknüpfen: Wir haben gelernt, wie man APIs untersucht und welche Tücken sie mitbringen können, wie man verschiedene APIs (Wetter- und Zugverspätungsdaten) nahtlos in eine Webanwendung integriert und die Daten sinnvoll kombiniert, wann es Sinn macht Daten vorab in eine Datenbank zu speichern.
-- Datenanalyse und Visualisierung: Einblicke in die Korrelation von Wetterbedingungen und Verspätungen auf den Strecken wurden durch statistische Auswertungen und die Visualisierung der Ergebnisse gewonnen.
-- Benutzerzentrierte Gestaltung: Wir haben den Fokus darauf gelegt, die Anwendung für den Benutzer einfach und interaktiv zu gestalten.
+Während der Umsetzung zeigte sich jedoch, dass gewisse Designentscheidungen aus Figma in der Praxis angepasst werden mussten. Vor allem im Hinblick auf das responsive Design kam es zu Abweichungen: Im Hochformat auf dem Smartphone wirkten die Postkarten sehr klein und das ursprünglich geplante Layout funktionierte visuell nicht überzeugend. Aus diesem Grund wurde das Layout während der Entwicklungsphase angepasst. Rückblickend wäre es hilfreich gewesen, bereits in der Designphase mehr Zeit für User Testing einzuplanen, um solche Probleme früher zu erkennen.
 
-### Schwierigkeiten
+Technisch gesehen verlief das Projekt grösstenteils reibungslos. Insgesamt traten nur wenige grössere Schwierigkeiten auf. Die grösste Herausforderung bestand darin, die individuell gestalteten Postkarten korrekt zu speichern und strukturiert in der Datenbank abzulegen. Besonders die Kombination aus Layout, Bildern, Texten und weiteren Elementen erforderte ein durchdachtes Datenmodell und mehrere Anpassungen während der Umsetzung.
 
-4. **Frontend-Entwicklung und Responsivität:**
-   - Gestaltung einer responsiven Benutzeroberfläche mit Tailwind CSS
-   - Anpassung des Layouts für verschiedene Bildschirmgrössen
+Die Zusammenarbeit im Team funktionierte sehr gut. Aufgaben konnten klar aufgeteilt werden und unterschiedliche Stärken ergänzten sich sinnvoll. Der regelmässige Austausch half dabei, Probleme früh zu erkennen und gemeinsam Lösungen zu finden.
+
+Insgesamt hat das Projekt gezeigt, wie wichtig die enge Verbindung zwischen Design und technischer Umsetzung ist. Kleine Anpassungen und Iterationen gehören zum Entwicklungsprozess dazu und tragen letztlich zu einem besseren Endresultat bei.
+
+## Learnings
+
+- Designentscheidungen aus Figma müssen in der Umsetzung kritisch überprüft werden, insbesondere im Hinblick auf Responsiveness  
+- User Testing in einer frühen Phase kann helfen, spätere Layout-Anpassungen zu vermeiden  
+- Die Speicherung komplexer, individuell gestalteter Inhalte in einer Datenbank erfordert eine saubere Datenstruktur  
+- Ein klar definierter Screenflow erleichtert die Umsetzung erheblich  
+- Eine gute Teamkommunikation reduziert technische und konzeptionelle Probleme  
+
+## Schwierigkeiten
+
+- Abweichungen zwischen Figma-Design und der tatsächlichen Darstellung auf mobilen Geräten  
+- Anpassung des Layouts aufgrund zu kleiner Postkarten im Hochformat  
+- Technische Umsetzung der Speicherung von Postkarten-Designs in der Datenbank  
+- Fehlende Zeit für ausführliches User Testing in der Designphase  
 
 ### Benutzte Ressourcen
 
-Während der Entwicklung stiessen wir auf technische Herausforderungen. In solchen Fällen griffen wir auf die Notizen aus dem Unterricht zurück. Wenn uns das Kursmaterial nicht weiterhalf, griffen wir auf [ChatGPT](https://chat.openai.com/) und [W3Schools](https://www.w3schools.com/php/default.asp) zurück, um Lösungen für Codeprobleme zu finden und uns bei Unklarheiten in der Programmierung zu unterstützen. Diese Vorgehensweise trug wesentlich zur Effizienz und Qualität des Entwicklungsprozesses bei. Natürlich gab es auch immer wieder Punkte, wo wir lieber auf menschliche Hilfe zurückgreifen wollten. In diesen Fällen erhielten wir Unterstützung durch unsere Dozenten oder Freunde, die in der Programmierwelt eingebettet sind.
+Während der Entwicklung des Projekts traten verschiedene technische Herausforderungen auf. In einem ersten Schritt griffen wir auf unsere Unterrichtsnotizen sowie das bereitgestellte Kursmaterial zurück. Diese bildeten die Grundlage für viele architektonische und konzeptionelle Entscheidungen.
 
-Für Design-Inspirationen haben wir häufig die Seite CodePen [CodePen](https://codepen.io/) genutzt. Diese Plattform erfordert jedoch eine gewisse Menge an Fachjargon und Vorwissen, um die gewünschten Ergebnisse zu finden. Es ist wichtig, klar anzugeben, mit welchen Technologien man arbeitet und ob man bestimmte Frameworks verwendet oder nicht, um relevante und nützliche Beispiele zu finden. Für Pragen bezüglich des Designs mit Tailwind, griffen wir auf die offizielle Entwicklerseite zurück [TailwindCSS](https://tailwindcss.com/).
+Wenn das Kursmaterial keine ausreichende Lösung bot, nutzten wir zusätzliche Online-Ressourcen. Für backend- und datenbankbezogene Funktionen verwendeten wir hauptsächlich die offizielle Dokumentation von [PocketBase](https://pocketbase.io/docs/). Für die Umsetzung des Frontends mit Vue.js orientierten wir uns an der offiziellen [Vue.js-Dokumentation](https://vuejs.org/).
+
+Zur Unterstützung bei konkreten Codeproblemen und zur Klärung von Verständnisfragen setzten wir KI-gestützte Tools wie [ChatGPT](https://chat.openai.com/) und [Claude](https://claude.ai/new) ein. Diese dienten insbesondere als Hilfe bei der Fehlersuche, beim Refactoring sowie beim Verständnis komplexerer Logik, ohne den eigentlichen Entwicklungsprozess vollständig zu automatisieren.
+
+Für allgemeine Programmierkonzepte und Syntaxfragen griffen wir ergänzend auf Plattformen wie [W3Schools](https://www.w3schools.com/) zurück.
+
+Im Bereich Design und Styling nutzten wir primär die offizielle Dokumentation von [Tailwind CSS](https://tailwindcss.com/), um Utility-Klassen korrekt einzusetzen und ein konsistentes Layout umzusetzen. Als visuelle Inspiration für das Design und die Benutzeroberfläche diente unter anderem die Plattform [Pinterest](https://www.pinterest.com/).
+
+Bei komplexeren Fragestellungen oder konzeptionellen Unsicherheiten zogen wir bewusst menschliche Unterstützung hinzu. In diesen Fällen erhielten wir wertvolle Hilfe durch unsere Dozenten sowie durch Freunde mit Erfahrung in der Softwareentwicklung.
 
 ### Erweiterungsmöglichkeiten
 
-### Bugs
+- **Postkarten-Konversationen**
+  - Beantworten empfangener Postkarten entweder mit:
+    - einer Textnachricht oder
+    - einer neuen Postkarte
+  - Darstellung der Antworten in einer Chat-ähnlichen Ansicht (ähnlich zu WhatsApp)
+  - Übersicht über alle ausgetauschten Postkarten und Reaktionen zwischen zwei Nutzer:innen
+
+- **Erweiterte Medienunterstützung**
+  - Unterstützung von Video-Postkarten
+  - Integration von animierten Elementen (z. B. GIFs)
+
+- **Persönliche Galerien**
+  - Eigene Galerie empfangene Postkarten
+  - Option, eine Galerie oder Postkarte zu veröffentlichen
+  - Erneutes Versenden oder Herunterladen empfangener Postkarten
+
+- **Community- & Sharing-Funktionen**
+  - Veröffentlichen von Postkarten-Designs und Templates
+  - Andere Nutzer:innen können Designs anpassen oder weiterentwickeln
+  - Anzeige der ursprünglichen Urheber:innen bei wiederverwendeten Designs
+  - Liken, Speichern oder Markieren von Favoriten
+
+- **Interaktionen & Reaktionen**
+  - Emoji-Reaktionen auf Postkarten
+  - Kommentarfunktion (privat oder öffentlich)
+  - Zustell- und Lesebestätigungen
+
+- **Performance & Skalierbarkeit**
+  - Bild- und Videokomprimierung für schnellere Uploads
+  - Caching häufig genutzter Designs
+  - Optimierung der Cloud-Speicherung
 
 ## Project Setup
 
