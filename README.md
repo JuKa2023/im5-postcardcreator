@@ -9,33 +9,52 @@ Ein Projekt von:
 
 ## Kurzbeschrieb
 
-adte ist eine digitale Postkarten-Webanwendung, mit der Nutzer:innen persönliche Postkarten gestalten und digital versenden können. Der Fokus liegt auf individuellem Ausdruck, bewusster Gestaltung und einer reduzierten, ästhetischen Benutzeroberfläche.
+adte ist eine digitale Postkarten-Webanwendung, mit der Nutzer:innen persönliche Postkarten gestalten und per Share-Link und E-Mail teilen können. Der Fokus liegt auf individuellem Ausdruck, bewusster Gestaltung und einer reduzierten, ästhetischen Benutzeroberfläche.
+
+## Projektidee
+
+Eine Web-App, die digitale Postkarten wie kleine, persönliche Kunstwerke behandelt: Nutzer:innen stellen Bild, Text, Sticker, Audio und einen optionalen Standort-Stempel zusammen und teilen die Karte per Link oder E-Mail. Der Fokus liegt auf der kreativen Gestaltung und dem emotionalen Moment des Versendens.
+
+## Screenshots
+
+![Landing Page](docs/screenshot-landing.png)
+![Login Page](docs/screenshot-login.png)
+![Shared Postcard View](docs/screenshot-share.png)
+
+## Dokumentation
+
+- Projektplan: `docs/plan.md`
+- Prozess: `docs/process.md`
+
+## Projekt online
+
+- <https://adte.juka.dev>
 
 ## Features
+
 - Registrierung & Login:
-  - Anmeldung und Registrierung über Google-Login
+  - Anmeldung über Google OAuth (PocketBase)
 
 - Inspiration & Einstieg:
-  - Frontpage mit Inspirationsinhalten und Beispiel-Postkarten
-  - Übersicht über mögliche Gestaltungsstile und Moodrichtungen
+  - Landing Page mit Beispiel-Postkarten aus lokalen Assets
+  - Mood-Vorlagen (randomisierte Unsplash-Bilder) als Startpunkt
 
 - Postkarten erstellen:
-  - Upload eigener Bilder und freie Platzierung auf der Postkarte
-  - Auswahl von Moodbildern als Hintergrund
-  - Textfelder hinzufügen und frei positionieren
-  - Auswahl von Schriftarten und Schriftfarben
-  - Einfügen von Emojis
-  - Aufnahme und Integration einer eigenen Sprachnachricht
+  - Hintergrundbild via Upload oder Mood-Vorlage
+  - Zusätzliche Bilder/Overlays frei platzieren
+  - Textfelder mit Schriftart, Farbe und Grösse
+  - Emoji-Sticker (Emoji Picker)
+  - Audio-Gruss aufnehmen
+  - Standort-Stempel (Geolocation + Wetter) optional
+  - Vorder-/Rückseite sowie Hoch-/Querformat
 
-- Postkarten versenden & empfangen:
-  - Versand digitaler Postkarten
-  - Empfang und Ansicht erhaltener Postkarten
-  - Generierung eines individuellen Links zur Postkarte
-  - Zeitversetztes Versenden mit Datum- und Uhrzeitauswahl
-  
+- Postkarten teilen & senden:
+  - Individueller Share-Link zur Postkarte
+  - Versand per E-Mail, optional zeitgesteuert (scheduled)
+
 - Übersicht & Verwaltung:
-  - Ansicht aller selbst erstellten und verschickten Postkarten
-
+  - Eigene Galerie mit Filtern (Entwurf/Gesendet)
+  - Vorschau der Postkarte und Share-Link aus der Galerie
 
 ## Verwendete Technologien und API
 
@@ -51,9 +70,8 @@ adte ist eine digitale Postkarten-Webanwendung, mit der Nutzer:innen persönlich
 - **Listen & Tools**:
   - `vue-router`: Offizieller Router für Vue.js.
   - `pocketbase`: JavaScript SDK für die Backend-Integration.
-  - `date-fns`: Moderne Datums-Utility-Bibliothek.
   - `vue-sonner`: Toast-Benachrichtigungen.
-
+  - `vue3-emoji-picker`: Emoji Picker für Sticker.
 
 ## Datenbankstruktur
 
@@ -64,14 +82,19 @@ Das Projekt verwendet ein PocketBase Backend mit einer Haupt-Collection:
 Die `postcards` Collection speichert alle erstellten Postkarten.
 
 - `front_image` (file): Das Bild der Postkarte.
-- `audio` (file, optional): Optionale Sprachnachricht zur Postkarte.
+- `audio` (file, optional): Optionale Sprachnachricht.
+- `element_images` (file[], optional): Zusätzliche Bild-Uploads für freie Elemente.
 - `message` (text): Die Textnachricht auf der Rückseite.
-- `elements` (json): JSON-Array mit den positionierten Elementen (Sticker, Text, etc.).
-- `is_public` (bool): Gibt an, ob die Karte in der öffentlichen Galerie sichtbar ist.
-- `share_token` (text): Ein eindeutiger Token für den Teilen-Link.
-- `sent` (bool): Status, ob die Karte bereits versendet wurde.
+- `elements` (json): JSON-Array der frei platzierten Elemente (Text, Sticker, Bilder).
+- `is_public` (bool): Sichtbarkeit (aktuell im Editor immer `true` gesetzt).
+- `share_token` (text): Token für den Share-Link.
+- `sent` (bool): Status, ob die Karte bereits per E-Mail versendet wurde.
 - `scheduled_time` (date): Geplanter Versandzeitpunkt (optional).
 - `recipient_email` (text): E-Mail-Adresse des Empfängers (optional).
+- `is_landscape` (bool, optional): Ausrichtung der Karte.
+- `canvas_width` / `canvas_height` (number, optional): Gespeicherte Canvas-Grösse.
+- `theme_id` (text, optional): Hintergrund-Theme der Rückseite.
+- `location` (text, optional): JSON-String für Standort/Weather-Stempel.
 - `user` (relation): Referenz auf den User, der die Karte erstellt hat.
 
 ### Users Collection (users)
@@ -89,20 +112,64 @@ Die `users` Collection verwaltet die Benutzerkonten der Anwendung.
 
 ## Setup
 
-Für die Einrichtung des Projekts empfehlen wir die Verwendung von Docker, da dies die Installation und Konfiguration aller benötigten Komponenten vereinfacht:
+Die App besteht aus einem Vue/Vite-Frontend und einem PocketBase-Backend. Der Frontend-Client erwartet einen laufenden PocketBase-Server.
 
+### Voraussetzungen
+
+- Node.js `^20.19.0 || >=22.12.0`
+- PocketBase `0.28.3` (oder kompatibel)
+
+### Lokale Entwicklung (empfohlen)
+
+1. PocketBase herunterladen und die Binary `pocketbase` ins Projektroot legen.
+2. PocketBase starten (nutzt `pb_data/`, `pb_hooks/` und `pb_migrations/` im Repo):
+
+   ```sh
+   PUBLIC_APP_URL=http://localhost:5173 ./pocketbase serve --http=127.0.0.1:8090
+   ```
+
+3. PocketBase Admin UI oeffnen und Admin-User erstellen:
+   - http://127.0.0.1:8090/_/
+4. OAuth Provider und Mailer konfigurieren:
+   - Google OAuth im Admin UI aktivieren (Redirect-URL wie von PocketBase angezeigt)
+   - SMTP/Mailer fuer geplante E-Mails setzen (Hook nutzt die Mailer-Einstellungen)
+5. Env fuer das Frontend setzen:
+
+   ```sh
+   echo "VITE_POCKETBASE_URL=http://localhost:8090" > .env.local
+   ```
+
+6. Frontend starten:
+
+   ```sh
+   npm install
+   npm run dev
+   ```
+
+### PocketBase Hinweise
+
+- Collections und Hooks liegen im Repo (`pb_migrations/`, `pb_hooks/`). Starte PocketBase im Projektroot, damit alles geladen wird.
+- Wenn du mit frischem `pb_data/` startest, pruefe im Admin UI, ob die Collection `postcards` vorhanden ist.
+
+### Docker (Production Build)
+
+```sh
+docker build -t adte .
+docker run -p 8080:80 adte
+```
 
 ### Umgebungsvariablen
 
 Die Anwendung verwendet folgende Umgebungsvariablen:
 
-- `DB_HOST`: Datenbank-Host (Standard: mysql)
-- `DB_NAME`: Datenbankname (Standard: im3)
-- `DB_USER`: Datenbankbenutzer (Standard: root)
-- `DB_PASSWORD`: Datenbankpasswort
-- `DB_ROOT_PASSWORD`: Root-Passwort
-- `APP_ENV`: Anwendungsumgebung (Entwicklung/Produktion)
-- `APP_DEBUG`: Debug-Modus (true/false)
+- `VITE_POCKETBASE_URL`: Basis-URL der PocketBase-Instanz (default: `window.location.origin`)
+- `PUBLIC_APP_URL`: Öffentliche App-URL für E-Mail-Links im PocketBase Hook (default: `http://localhost:5173`)
+- `PB_VERSION`: (Docker) PocketBase Version für das Image (default: `0.28.3`)
+
+### Hinweise
+
+- Für das Versenden geplanter Postkarten muss in PocketBase ein Mailer (SMTP) konfiguriert sein, da der Hook `pb_hooks/sendScheduledPostcards.pb.js` E-Mails verschickt.
+- Der Standort-Stempel nutzt clientseitig Geolocation sowie die externen APIs BigDataCloud (Reverse Geo) und Open-Meteo (Wetter), jeweils ohne API-Key.
 
 ## Reflektion
 
